@@ -28,7 +28,6 @@ class UserLogin(Resource):
 
         # this is what the `authenticate()` function did in security.py
         if user and safe_str_cmp(user.password, data['password']):
-            # identity= is what the identity() function did in security.py—now stored in the JWT
             access_token = create_access_token(identity=user.user_id, fresh=True)
             refresh_token = create_refresh_token(user.user_id)
             return {
