@@ -9,7 +9,7 @@ from resources.user import UserLogin
 pymysql.install_as_MySQLdb()
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://rafa:477075@18.217.230.166/calc_ir'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://API:477075@18.217.230.166/calc_ir'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['PROPAGATE_EXCEPTIONS'] = True
 app.config['JWT_SECRET_KEY'] = 'Segredo'
