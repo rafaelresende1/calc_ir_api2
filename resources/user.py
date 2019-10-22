@@ -5,7 +5,7 @@ from flask_jwt_extended import (
     create_refresh_token
 )
 
-from model.user import UserModel
+from model.user import User
 
 _user_parser = reqparse.RequestParser()
 _user_parser.add_argument('username',
@@ -24,7 +24,7 @@ class UserLogin(Resource):
     def post(self):
         data = _user_parser.parse_args()
 
-        user = UserModel.find_by_username(data['username'])
+        user = User.find_by_username(data['username'])
 
         # this is what the `authenticate()` function did in security.py
         if user and safe_str_cmp(user.password, data['password']):
