@@ -1,0 +1,3 @@
+from app import app
+name__ == "__main__":
+    app.run()
